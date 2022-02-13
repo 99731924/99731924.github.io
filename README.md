@@ -34,7 +34,7 @@ public:
 };
 
                                         
-#二分
+# 二分
   
   class Solution {
 public:
@@ -57,4 +57,4 @@ public:
     }
 };
   
-  ##要注意mid=起点+长度
+  ## 要注意mid=起点+长度
