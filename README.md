@@ -76,8 +76,27 @@ public:
 };
                                        
  #  slow统计有效数字，i扫一遍
+
+#继续双指针
+https://leetcode-cn.com/problems/squares-of-a-sorted-array/submissions/                
+class Solution {
+public:
+    vector<int> sortedSquares(vector<int>& nums) {
+        vector<int> result(nums.size(),0);
+        int end=nums.size()-1;
+        int begin=0;
+        int k=end;
+        for(k=end;k>=0;k--){
+            if(nums[end]*nums[end]>nums[begin]*nums[begin])result[k]=nums[end]*nums[end],end--;
+            else result[k]=nums[begin]*nums[begin],begin++;
+            cout<<k<<" ";
+        }
+        return result;
+    }
+};  
+    暴力全部求一边然后sort，但是没有利用到题目中的有序，负数也是有序的，头尾比较塞进去就好了
                                        
-  ## 常考知识
+## 常考知识
 ### 装饰器
 - 装饰器可以理解为对函数的装饰，即在实现函数功能前先执行装饰器的函数。对于一些可复用的代码，例如鉴权功能或者打日志记录时间，可以使用装饰器
 ```python
