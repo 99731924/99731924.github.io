@@ -77,7 +77,7 @@ public:
                                        
  #  slow统计有效数字，i扫一遍
 
-#继续双指针
+# 继续双指针
 https://leetcode-cn.com/problems/squares-of-a-sorted-array/submissions/                
 class Solution {
 public:
@@ -94,7 +94,7 @@ public:
         return result;
     }
 };  
-    暴力全部求一边然后sort，但是没有利用到题目中的有序，负数也是有序的，头尾比较塞进去就好了
+    # 暴力全部求一边然后sort，但是没有利用到题目中的有序，负数也是有序的，头尾比较塞进去就好了
                                        
 ## 常考知识
 ### 装饰器
