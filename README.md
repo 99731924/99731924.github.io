@@ -1,14 +1,11 @@
-## 刷题
 
-
-
-### 二分搜索
+# 二分搜索
 
 https://leetcode-cn.com/problems/binary-search/
 
 
 
-# 暴力
+## 暴力
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
@@ -20,7 +17,7 @@ public:
     }
 };
                                         
-# 暴力优化
+## 暴力优化
                                         
 class Solution {
 public:
@@ -57,11 +54,11 @@ public:
     }
 };
   
-#  要注意mid=起点+长度
+##  要注意mid=起点+长度
     
     
-###  双指针
-    https://leetcode-cn.com/problems/remove-element/submissions/
+##  双指针
+https://leetcode-cn.com/problems/remove-element/submissions/
     
     class Solution {
 public:
@@ -77,7 +74,7 @@ public:
                                        
  #  slow统计有效数字，i扫一遍
 
-# 继续双指针
+## 继续双指针
 https://leetcode-cn.com/problems/squares-of-a-sorted-array/submissions/                
 class Solution {
 public:
