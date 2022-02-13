@@ -57,10 +57,10 @@ public:
     }
 };
   
-  ## 要注意mid=起点+长度
+  ##  要注意mid=起点+长度
     
     
-    ###双指针
+    ###  双指针
     https://leetcode-cn.com/problems/remove-element/submissions/
     
     class Solution {
