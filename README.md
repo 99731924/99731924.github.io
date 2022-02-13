@@ -1,37 +1,60 @@
-## Welcome to GitHub Pages
+## 刷题
 
-You can use the [editor on GitHub](https://github.com/99731924/99731924.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### 二分搜索
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+https://leetcode-cn.com/problems/binary-search/
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+# 暴力
+class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+        
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]==target) return i;
+        }
+        return -1;
+    }
+};
+                                        
+# 暴力优化
+                                        
+class Solution {
+public:
+    int search(vector<int>& nums, int target) {        
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]==target) return i;
+            if(nums[i]>target) return -1;
+        }
+        return -1;
+    }
+};
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/99731924/99731924.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+                                        
+#二分
+  
+  class Solution {
+public:
+    int search(vector<int>& nums, int target) {    
+        int left=0;int right=nums.size()-1;    
+        int mid;
+        while(left<=right){
+            mid=left+(right-left)/2;
+            if(nums[mid]<target){
+                left=mid+1;
+            }
+            else if(nums[mid]>target){
+                right=mid-1;
+            }
+            else if(nums[mid]==target){
+                return mid;
+            }
+        }
+        return -1;
+    }
+};
+  
+  ##要注意mid=起点+长度
