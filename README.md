@@ -58,3 +58,21 @@ public:
 };
   
   ## 要注意mid=起点+长度
+    
+    
+    ###双指针
+    https://leetcode-cn.com/problems/remove-element/submissions/
+    
+    class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+       int slow=0;
+       for(int i=0;i<nums.size();i++){
+           if(nums[i]!=val)
+           nums[slow++]=nums[i];
+       } 
+       return slow;
+    }
+};
+                                       
+ #slow统计有效数字，i扫一遍
