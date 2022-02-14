@@ -75,7 +75,9 @@ https://leetcode-cn.com/problems/remove-element/submissions/
 #  slow统计有效数字，i扫一遍
 
 ## 继续双指针
-https://leetcode-cn.com/problems/squares-of-a-sorted-array/submissions/                
+
+    https://leetcode-cn.com/problems/squares-of-a-sorted-array/submissions/          
+    
     class Solution {
     public:
     vector<int> sortedSquares(vector<int>& nums) {
@@ -94,7 +96,7 @@ https://leetcode-cn.com/problems/squares-of-a-sorted-array/submissions/
     
 # 暴力全部求一边然后sort，但是没有利用到题目中的有序，负数也是有序的，头尾比较塞进去就好了
     
-#长度最小子串
+# 长度最小子串
     https://leetcode-cn.com/problems/minimum-size-subarray-sum/submissions/
     
     class Solution {
