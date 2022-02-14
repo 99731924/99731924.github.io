@@ -6,8 +6,8 @@ https://leetcode-cn.com/problems/binary-search/
 
 
 ## 暴力
-class Solution {
-public:
+    class Solution {
+    public:
     int search(vector<int>& nums, int target) {
         
         for(int i=0;i<nums.size();i++){
@@ -19,8 +19,8 @@ public:
                                         
 ## 暴力优化
                                         
-class Solution {
-public:
+    class Solution {
+    public:
     int search(vector<int>& nums, int target) {        
         for(int i=0;i<nums.size();i++){
             if(nums[i]==target) return i;
@@ -33,8 +33,8 @@ public:
                                         
 # 二分
   
-  class Solution {
-public:
+    class Solution {
+    public:
     int search(vector<int>& nums, int target) {    
         int left=0;int right=nums.size()-1;    
         int mid;
@@ -61,7 +61,7 @@ public:
 https://leetcode-cn.com/problems/remove-element/submissions/
     
     class Solution {
-public:
+    public:
     int removeElement(vector<int>& nums, int val) {
        int slow=0;
        for(int i=0;i<nums.size();i++){
@@ -76,8 +76,8 @@ public:
 
 ## 继续双指针
 https://leetcode-cn.com/problems/squares-of-a-sorted-array/submissions/                
-class Solution {
-public:
+    class Solution {
+    public:
     vector<int> sortedSquares(vector<int>& nums) {
         vector<int> result(nums.size(),0);
         int end=nums.size()-1;
@@ -92,6 +92,32 @@ public:
     }
 };  
     # 暴力全部求一边然后sort，但是没有利用到题目中的有序，负数也是有序的，头尾比较塞进去就好了
+    
+    #长度最小子串
+    https://leetcode-cn.com/problems/minimum-size-subarray-sum/submissions/
+    
+    class Solution {
+    public:
+    int minSubArrayLen(int target, vector<int>& nums) {
+        int slow=0, fast=0;
+        int minlen=10010, len=0;
+        int total=0;
+        int flag=0;
+        for(;fast<nums.size();fast++){
+            total+=nums[fast];            
+            while(total>=target){
+                flag++;
+                len=fast-slow+1;
+                minlen=min(minlen,len);               
+                total-=nums[slow];
+                slow++;                
+            }
+        }
+        if(flag==0)minlen=0;
+
+        return minlen;
+    }
+};
                                        
 ## 常考知识
 ### 装饰器
