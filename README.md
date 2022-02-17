@@ -12,27 +12,38 @@ y=kx+b
 
 喏，这就是初中数学老师教我们的直线方程。那上过初中的同学都知道，这个式子表达的是，当我知道k（参数）和b（参数）的情况下，我随便给一个x我都能通过这个方程算出y来。而且呢，这个式子是线性的，为什么呢？因为从直觉上来说，你都知道，这个式子的函数图像是条直线。。。。从理论上来说，这式子满足线性系统的性质。（至于线性系统是啥，我就不扯了，不然没完没了）那有的同学可能会觉得疑惑，这一节要说的是线性回归，我扯这个low逼直线方程干啥？其实，说白了，线性回归无非就是在N维空间中找一个形式像直线方程一样的函数来拟合数据而已。比如说，我现在有这么一张图，横坐标代表房子的面积，纵坐标代表房价。
 
+![Image text](https://img-blog.csdn.net/20180829213312304?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fsd18xMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
 然后呢，线性回归就是要找一条直线，并且让这条直线尽可能地拟合图中的数据点。
 那如果让1000个老铁来找这条直线就可能找出1000种直线来，比如这样
 
+![Image text](https://img-blog.csdn.net/20180829213742884?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fsd18xMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
 这样
 
+![image text](https://img-blog.csdn.net/20180829213816880?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fsd18xMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 或者这样
+![image text](https://img-blog.csdn.net/20180829213845176?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fsd18xMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 喏，其实找直线的过程就是在做线性回归，只不过这个叫法更有逼格而已。。。
 
 # 2 损失函数
 那既然是找直线，那肯定是要有一个评判的标准，来评判哪条直线才是最好的。OK，道理我们都懂，那咋评判呢？其实简单的雅痞。。。只要算一下实际房价和我找出的直线根据房子大小预测出来的房价之间的差距就行了。说白了就是算两点的距离。当我们把所有实际房价和预测出来的房价的差距（距离）算出来然后做个加和，我们就能量化出现在我们预测的房价和实际房价之间的误差。例如下图中我画了很多条小数线，每一条小数线就是实际房价和预测房价的差距（距离）
 
+![image text](https://img-blog.csdn.net/20180829214719510?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fsd18xMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
 然后把每条小竖线的长度加起来就等于我们现在通过这条直线预测出的房价与实际房价之间的差距。那每条小竖线的长度的加和怎么算？其实就是欧式距离加和，公式如下。（其中y(i)表示的是实际房价，y^(i)表示的是预测房价）
+![image text](https://img-blog.csdn.net/2018082921503261?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fsd18xMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 这个欧氏距离加和其实就是用来量化预测结果和真实结果的误差的一个函数。在ML中称它为损失函数（说白了就是计算误差的函数）。那有了这个函数，我们就相当于有了一个评判标准，当这个函数的值越小，就越说明我们找到的这条直线越能拟合我们的房价数据。所以说啊，线性回归无非就是通过这个损失函数做为评判标准来找出一条直线。
 
 刚刚我举的例子是一维的例子（特征只有房子大小），那现在我们假设我的数据中还有一个特征是楼间距，那图像可能就是酱紫了。
 
+![image text](https://img-blog.csdn.net/20180829215651135?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fsd18xMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
 从图我们可以看得出来，就算是在二维空间中，还是找一条直线来拟合我们的数据。所以啊，换汤不换药，损失函数还是这个欧式距离加和。
 
-
+![image text](https://img-blog.csdn.net/20180829215824164?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fsd18xMjM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 
 
