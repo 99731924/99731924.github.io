@@ -357,6 +357,7 @@ public:
 - get请求参数只能进行url编码，post请求参数可以是任意类型
 - url长度有限制，各浏览器长度限制不同，post请求参数长度无限制
 - 因为get请求参数放在url中，所以参数信息会保存在浏览器历史里，不够安全。post请求不会保存在浏览器历史中。
+### (12)SSL ![image text](https://img-blog.csdn.net/20160317095226124?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)    
 ## 操作系统
 ### (1) 进程和线程
 - 进程是资源分配的最小单位，线程是系统调度的最小单位。进程切换开销大，线程切换开销相对较小。
